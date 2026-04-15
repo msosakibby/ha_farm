@@ -1,0 +1,59 @@
+  
+api:
+  password: FeSK0175!@
+  username: mkibby
+rtsp:
+ password: FeSK0175!@
+ username: mkibby
+streams:
+   T821451125213074:
+     - tcp://127.0.0.1:65535
+   T8210P20201605FD:
+     - tcp://127.0.0.1:65535
+   T8170T1024302C83:
+     - tcp://127.0.0.1:65535
+#  Front_Doors: 
+#    - rtsp://mkibby:FeSK0175%21%40@192.168.7.186:8554/defaultPrimary1
+#    - ffmpeg:Front_Doors#video=h264
+#  receiving_backdoor: 
+#    - rtsp://mkibby:FeSK0175%21%40@192.168.7.186:8554/defaultPrimary0
+#    - ffmpeg:receiving_backdoor#video=h264
+#  cashier_office: 
+#    - rtsp://mkibby:FeSK0175%21%40@192.168.7.186:8554/defaultPrimary3
+#    - ffmpeg:cashier_office#video=h264
+#  pharmacy_medicine_aisle: 
+#    - rtsp://mkibby:FeSK0175%21%40@192.168.7.36:8554/defaultPrimary0
+#    - ffmpeg:pharmacy_medicine_aisle#video=h264
+#  Pharmacy: 
+#    - rtsp://mkibby:FeSK0175%21%40@192.168.7.36:8554/defaultPrimary1
+#    - ffmpeg:Pharmacy#video=h264
+#  Meat_Aisle: 
+#    - rtsp://mkibby:FeSK0175%21%40@192.168.7.36:8554/defaultPrimary2
+#    - ffmpeg:Meat_Aisle#video=h264
+#  semi_bay_doors: 
+#    - rtsp://mkibby:FeSK0175%21%40@192.168.7.56:8554/defaultPrimary0
+#    - ffmpeg:semi_bay_doors#video=h264
+#  center_store_back_to_front: 
+#    - rtsp://mkibby:FeSK0175%21%40@192.168.7.56:8554/defaultPrimary1
+#    - ffmpeg:center_store_back_to_front#video=h264
+#  outside_receiving_bay_doors: 
+#    - rtsp://mkibby:FeSK0175%21%40@192.168.7.56:8554/defaultPrimary2
+#    - ffmpeg:outside_receiving_bay_doors#video=h264
+#  network_closet: 
+#    - rtsp://mkibby:FeSK0175%21%40@192.168.7.44:8554/defaultPrimary0
+#    - ffmpeg:network_closet#video=h264
+#  registers: 
+#    - rtsp://mkibby:FeSK0175%21%40@192.168.7.44:8554/defaultPrimary1
+#    - ffmpeg:registers#video=h264
+#  side_door_and_hall: 
+#    - rtsp://mkibby:FeSK0175%21%40@192.168.7.44:8554/defaultPrimary3
+#    - ffmpeg:side_door_and_hall#video=h264
+   main_office: 
+#    - rtsp://mkibby:FeSK0175%21%40@192.168.7.84/defaultPrimary?streamType=m
+     - rtsps://192.168.7.1:7441/8A5Z2UzsMDYCBkWn?enableSrtp
+#    - ffmpeg:main_office#video=h264
+#  T8210P20201605FD:
+#    - T8210P20201605FD
+#  T8170T1024302C83:
+#    - T8170T1024302C83
+#  Registers 5D0F30: homekit://192.168.7.50:21072?device_id=22:16:72:5D:0F:30&device_public=4c01598d26301bfd0e7ed7264d2d3a3d79763becfab8c7fe3b0b71aadf2354d5&client_id=fcee1448-6250-8f44-66af-ea6cb18bb195&client_private=5f97f636ac555ab5ea3bb605f397c8e4d8ae4b62480acdb5c22110fe173e0ce9d68f6e3606b0c7a8ffaec61b1ccd3795a532cd7ab7c3926e84cdfffc216572b6

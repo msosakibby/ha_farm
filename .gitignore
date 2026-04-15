@@ -1,0 +1,19 @@
+# Forensic Baseline .gitignore for Home Assistant
+secrets.yaml
+ip_bans.yaml
+.google.token
+.storage/
+.cloud/
+.ssh/
+*.db
+*.db-shm
+*.db-wal
+backups/
+snapshots/
+home-assistant.log
+home-assistant.log.*
+__pycache__/
+*.py[cod]
+*$py.class
+.DS_Store
+git_sync.log

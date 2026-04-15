@@ -1,0 +1,14 @@
+# In your configuration.yaml or a separate sensors.yaml file
+# sensor.yaml
+
+# Template sensor for camera rotation
+#- platform: template
+#  sensors:
+#    camera_rotation:
+#      friendly_name: "Camera Rotation"
+#      value_template: >
+#        {% if is_state('input_boolean.camera_toggle', 'on') %}
+#          network_closet
+#        {% else %}
+#          qqdoor_687c_entry_high_resolution_channel
+#        {% endif %}

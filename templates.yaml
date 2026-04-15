@@ -1,0 +1,500 @@
+
+sensor:
+  #####################################################################
+  # Mark Sosa Kibby - device_tracker.life360_mark_sosa_kibby
+  #####################################################################
+  - name: "Mark Sosa Kibby Battery Level"
+    unique_id: "mark_sosa_kibby_battery_level"
+    unit_of_measurement: "%"
+    device_class: battery
+    state_class: measurement
+    state: "{{ state_attr('device_tracker.life360_mark_sosa_kibby', 'battery_level') }}"
+
+  - name: "Mark Sosa Kibby Charging Status"
+    unique_id: "mark_sosa_kibby_charging_status"
+    state: >
+      {% if state_attr('device_tracker.life360_mark_sosa_kibby', 'battery_charging') %}
+        Charging
+      {% else %}
+        Not Charging
+      {% endif %}
+
+  - name: "Mark Sosa Kibby Driving Status"
+    unique_id: "mark_sosa_kibby_driving_status"
+    state: >
+      {% if state_attr('device_tracker.life360_mark_sosa_kibby', 'driving') %}
+        Driving
+      {% else %}
+        Stopped
+      {% endif %}
+
+  - name: "Mark Sosa Kibby Last Seen"
+    unique_id: "mark_sosa_kibby_last_seen"
+    device_class: timestamp
+    state: "{{ state_attr('device_tracker.life360_mark_sosa_kibby', 'last_seen') }}"
+
+  - name: "Mark Sosa Kibby Current Place"
+    unique_id: "mark_sosa_kibby_current_place"
+    state: "{{ state_attr('device_tracker.life360_mark_sosa_kibby', 'place') }}"
+
+  - name: "Mark Sosa Kibby Address"
+    unique_id: "mark_sosa_kibby_address"
+    state: "{{ state_attr('device_tracker.life360_mark_sosa_kibby', 'address') }}"
+
+  - name: "Mark Sosa Kibby Speed"
+    unique_id: "mark_sosa_kibby_speed"
+    unit_of_measurement: "mph"
+    device_class: speed
+    state_class: measurement
+    state: "{{ state_attr('device_tracker.life360_mark_sosa_kibby', 'speed') }}"
+
+  - name: "Mark Sosa Kibby WiFi Status"
+    unique_id: "mark_sosa_kibby_wifi_status"
+    state: >
+      {% if state_attr('device_tracker.life360_mark_sosa_kibby', 'wifi_on') %}
+        Connected
+      {% else %}
+        Disconnected
+      {% endif %}
+
+  - name: "Mark Sosa Kibby Latitude"
+    unique_id: "mark_sosa_kibby_latitude"
+    icon: mdi:map-marker-radius
+    state: "{{ state_attr('device_tracker.life360_mark_sosa_kibby', 'latitude') }}"
+
+  - name: "Mark Sosa Kibby Longitude"
+    unique_id: "mark_sosa_kibby_longitude"
+    icon: mdi:map-marker-radius
+    state: "{{ state_attr('device_tracker.life360_mark_sosa_kibby', 'longitude') }}"
+
+  - name: "Mark Sosa Kibby GPS Accuracy"
+    unique_id: "mark_sosa_kibby_gps_accuracy"
+    unit_of_measurement: "m"
+    state_class: measurement
+    icon: mdi:crosshairs-gps
+    state: "{{ state_attr('device_tracker.life360_mark_sosa_kibby', 'gps_accuracy') }}"
+
+  - name: "Mark Sosa Kibby At Location Since"
+    unique_id: "mark_sosa_kibby_at_loc_since"
+    device_class: timestamp
+    state: "{{ state_attr('device_tracker.life360_mark_sosa_kibby', 'at_loc_since') }}"
+
+  - name: "Mark Sosa Kibby Source Type"
+    unique_id: "mark_sosa_kibby_source_type"
+    state: "{{ state_attr('device_tracker.life360_mark_sosa_kibby', 'source_type') }}"
+
+  #####################################################################
+  # Parker Erik Sosa Kibby - device_tracker.life360_parker_erik_sosa_kibby
+  #####################################################################
+  - name: "Parker Erik Sosa Kibby Battery Level"
+    unique_id: "parker_erik_sosa_kibby_battery_level"
+    unit_of_measurement: "%"
+    device_class: battery
+    state_class: measurement
+    state: "{{ state_attr('device_tracker.life360_parker_erik_sosa_kibby', 'battery_level') }}"
+
+  - name: "Parker Erik Sosa Kibby Charging Status"
+    unique_id: "parker_erik_sosa_kibby_charging_status"
+    state: >
+      {% if state_attr('device_tracker.life360_parker_erik_sosa_kibby', 'battery_charging') %}
+        Charging
+      {% else %}
+        Not Charging
+      {% endif %}
+
+  - name: "Parker Erik Sosa Kibby Driving Status"
+    unique_id: "parker_erik_sosa_kibby_driving_status"
+    state: >
+      {% if state_attr('device_tracker.life360_parker_erik_sosa_kibby', 'driving') %}
+        Driving
+      {% else %}
+        Stopped
+      {% endif %}
+
+  - name: "Parker Erik Sosa Kibby Last Seen"
+    unique_id: "parker_erik_sosa_kibby_last_seen"
+    device_class: timestamp
+    state: "{{ state_attr('device_tracker.life360_parker_erik_sosa_kibby', 'last_seen') }}"
+
+  - name: "Parker Erik Sosa Kibby Current Place"
+    unique_id: "parker_erik_sosa_kibby_current_place"
+    state: "{{ state_attr('device_tracker.life360_parker_erik_sosa_kibby', 'place') }}"
+
+  - name: "Parker Erik Sosa Kibby Address"
+    unique_id: "parker_erik_sosa_kibby_address"
+    state: "{{ state_attr('device_tracker.life360_parker_erik_sosa_kibby', 'address') }}"
+
+  - name: "Parker Erik Sosa Kibby Speed"
+    unique_id: "parker_erik_sosa_kibby_speed"
+    unit_of_measurement: "mph"
+    device_class: speed
+    state_class: measurement
+    state: "{{ state_attr('device_tracker.life360_parker_erik_sosa_kibby', 'speed') }}"
+
+  - name: "Parker Erik Sosa Kibby WiFi Status"
+    unique_id: "parker_erik_sosa_kibby_wifi_status"
+    state: >
+      {% if state_attr('device_tracker.life360_parker_erik_sosa_kibby', 'wifi_on') %}
+        Connected
+      {% else %}
+        Disconnected
+      {% endif %}
+
+  - name: "Parker Erik Sosa Kibby Latitude"
+    unique_id: "parker_erik_sosa_kibby_latitude"
+    icon: mdi:map-marker-radius
+    state: "{{ state_attr('device_tracker.life360_parker_erik_sosa_kibby', 'latitude') }}"
+
+  - name: "Parker Erik Sosa Kibby Longitude"
+    unique_id: "parker_erik_sosa_kibby_longitude"
+    icon: mdi:map-marker-radius
+    state: "{{ state_attr('device_tracker.life360_parker_erik_sosa_kibby', 'longitude') }}"
+
+  - name: "Parker Erik Sosa Kibby GPS Accuracy"
+    unique_id: "parker_erik_sosa_kibby_gps_accuracy"
+    unit_of_measurement: "m"
+    state_class: measurement
+    icon: mdi:crosshairs-gps
+    state: "{{ state_attr('device_tracker.life360_parker_erik_sosa_kibby', 'gps_accuracy') }}"
+
+  - name: "Parker Erik Sosa Kibby At Location Since"
+    unique_id: "parker_erik_sosa_kibby_at_loc_since"
+    device_class: timestamp
+    state: "{{ state_attr('device_tracker.life360_parker_erik_sosa_kibby', 'at_loc_since') }}"
+
+  - name: "Parker Erik Sosa Kibby Source Type"
+    unique_id: "parker_erik_sosa_kibby_source_type"
+    state: "{{ state_attr('device_tracker.life360_parker_erik_sosa_kibby', 'source_type') }}"
+
+  #####################################################################
+  # Cole Sosa Kibby - device_tracker.life360_cole_sosa_kibby
+  #####################################################################
+  - name: "Cole Sosa Kibby Battery Level"
+    unique_id: "cole_sosa_kibby_battery_level"
+    unit_of_measurement: "%"
+    device_class: battery
+    state_class: measurement
+    state: "{{ state_attr('device_tracker.life360_cole_sosa_kibby', 'battery_level') }}"
+
+  - name: "Cole Sosa Kibby Charging Status"
+    unique_id: "cole_sosa_kibby_charging_status"
+    state: >
+      {% if state_attr('device_tracker.life360_cole_sosa_kibby', 'battery_charging') %}
+        Charging
+      {% else %}
+        Not Charging
+      {% endif %}
+
+  - name: "Cole Sosa Kibby Driving Status"
+    unique_id: "cole_sosa_kibby_driving_status"
+    state: >
+      {% if state_attr('device_tracker.life360_cole_sosa_kibby', 'driving') %}
+        Driving
+      {% else %}
+        Stopped
+      {% endif %}
+
+  - name: "Cole Sosa Kibby Last Seen"
+    unique_id: "cole_sosa_kibby_last_seen"
+    device_class: timestamp
+    state: "{{ state_attr('device_tracker.life360_cole_sosa_kibby', 'last_seen') }}"
+
+  - name: "Cole Sosa Kibby Current Place"
+    unique_id: "cole_sosa_kibby_current_place"
+    state: "{{ state_attr('device_tracker.life360_cole_sosa_kibby', 'place') }}"
+
+  - name: "Cole Sosa Kibby Address"
+    unique_id: "cole_sosa_kibby_address"
+    state: "{{ state_attr('device_tracker.life360_cole_sosa_kibby', 'address') }}"
+
+  - name: "Cole Sosa Kibby Speed"
+    unique_id: "cole_sosa_kibby_speed"
+    unit_of_measurement: "mph"
+    device_class: speed
+    state_class: measurement
+    state: "{{ state_attr('device_tracker.life360_cole_sosa_kibby', 'speed') }}"
+
+  - name: "Cole Sosa Kibby WiFi Status"
+    unique_id: "cole_sosa_kibby_wifi_status"
+    state: >
+      {% if state_attr('device_tracker.life360_cole_sosa_kibby', 'wifi_on') %}
+        Connected
+      {% else %}
+        Disconnected
+      {% endif %}
+
+  - name: "Cole Sosa Kibby Latitude"
+    unique_id: "cole_sosa_kibby_latitude"
+    icon: mdi:map-marker-radius
+    state: "{{ state_attr('device_tracker.life360_cole_sosa_kibby', 'latitude') }}"
+
+  - name: "Cole Sosa Kibby Longitude"
+    unique_id: "cole_sosa_kibby_longitude"
+    icon: mdi:map-marker-radius
+    state: "{{ state_attr('device_tracker.life360_cole_sosa_kibby', 'longitude') }}"
+
+  - name: "Cole Sosa Kibby GPS Accuracy"
+    unique_id: "cole_sosa_kibby_gps_accuracy"
+    unit_of_measurement: "m"
+    state_class: measurement
+    icon: mdi:crosshairs-gps
+    state: "{{ state_attr('device_tracker.life360_cole_sosa_kibby', 'gps_accuracy') }}"
+
+  - name: "Cole Sosa Kibby At Location Since"
+    unique_id: "cole_sosa_kibby_at_loc_since"
+    device_class: timestamp
+    state: "{{ state_attr('device_tracker.life360_cole_sosa_kibby', 'at_loc_since') }}"
+
+  - name: "Cole Sosa Kibby Source Type"
+    unique_id: "cole_sosa_kibby_source_type"
+    state: "{{ state_attr('device_tracker.life360_cole_sosa_kibby', 'source_type') }}"
+
+  #####################################################################
+  # Judy Grandy - device_tracker.life360_judy_grandy
+  #####################################################################
+  - name: "Judy Grandy Battery Level"
+    unique_id: "judy_grandy_battery_level"
+    unit_of_measurement: "%"
+    device_class: battery
+    state_class: measurement
+    state: "{{ state_attr('device_tracker.life360_judy_grandy', 'battery_level') }}"
+
+  - name: "Judy Grandy Charging Status"
+    unique_id: "judy_grandy_charging_status"
+    state: >
+      {% if state_attr('device_tracker.life360_judy_grandy', 'battery_charging') %}
+        Charging
+      {% else %}
+        Not Charging
+      {% endif %}
+
+  - name: "Judy Grandy Driving Status"
+    unique_id: "judy_grandy_driving_status"
+    state: >
+      {% if state_attr('device_tracker.life360_judy_grandy', 'driving') %}
+        Driving
+      {% else %}
+        Stopped
+      {% endif %}
+
+  - name: "Judy Grandy Last Seen"
+    unique_id: "judy_grandy_last_seen"
+    device_class: timestamp
+    state: "{{ state_attr('device_tracker.life360_judy_grandy', 'last_seen') }}"
+
+  - name: "Judy Grandy Current Place"
+    unique_id: "judy_grandy_current_place"
+    state: "{{ state_attr('device_tracker.life360_judy_grandy', 'place') }}"
+
+  - name: "Judy Grandy Address"
+    unique_id: "judy_grandy_address"
+    state: "{{ state_attr('device_tracker.life360_judy_grandy', 'address') }}"
+
+  - name: "Judy Grandy Speed"
+    unique_id: "judy_grandy_speed"
+    unit_of_measurement: "mph"
+    device_class: speed
+    state_class: measurement
+    state: "{{ state_attr('device_tracker.life360_judy_grandy', 'speed') }}"
+
+  - name: "Judy Grandy WiFi Status"
+    unique_id: "judy_grandy_wifi_status"
+    state: >
+      {% if state_attr('device_tracker.life360_judy_grandy', 'wifi_on') %}
+        Connected
+      {% else %}
+        Disconnected
+      {% endif %}
+
+  - name: "Judy Grandy Latitude"
+    unique_id: "judy_grandy_latitude"
+    icon: mdi:map-marker-radius
+    state: "{{ state_attr('device_tracker.life360_judy_grandy', 'latitude') }}"
+
+  - name: "Judy Grandy Longitude"
+    unique_id: "judy_grandy_longitude"
+    icon: mdi:map-marker-radius
+    state: "{{ state_attr('device_tracker.life360_judy_grandy', 'longitude') }}"
+
+  - name: "Judy Grandy GPS Accuracy"
+    unique_id: "judy_grandy_gps_accuracy"
+    unit_of_measurement: "m"
+    state_class: measurement
+    icon: mdi:crosshairs-gps
+    state: "{{ state_attr('device_tracker.life360_judy_grandy', 'gps_accuracy') }}"
+
+  - name: "Judy Grandy At Location Since"
+    unique_id: "judy_grandy_at_loc_since"
+    device_class: timestamp
+    state: "{{ state_attr('device_tracker.life360_judy_grandy', 'at_loc_since') }}"
+
+  - name: "Judy Grandy Source Type"
+    unique_id: "judy_grandy_source_type"
+    state: "{{ state_attr('device_tracker.life360_judy_grandy', 'source_type') }}"
+
+  #####################################################################
+  # Joann Weston - device_tracker.life360_joann_weston
+  #####################################################################
+  - name: "Joann Weston Battery Level"
+    unique_id: "joann_weston_battery_level"
+    unit_of_measurement: "%"
+    device_class: battery
+    state_class: measurement
+    state: "{{ state_attr('device_tracker.life360_joann_weston', 'battery_level') }}"
+
+  - name: "Joann Weston Charging Status"
+    unique_id: "joann_weston_charging_status"
+    state: >
+      {% if state_attr('device_tracker.life360_joann_weston', 'battery_charging') %}
+        Charging
+      {% else %}
+        Not Charging
+      {% endif %}
+
+  - name: "Joann Weston Driving Status"
+    unique_id: "joann_weston_driving_status"
+    state: >
+      {% if state_attr('device_tracker.life360_joann_weston', 'driving') %}
+        Driving
+      {% else %}
+        Stopped
+      {% endif %}
+
+  - name: "Joann Weston Last Seen"
+    unique_id: "joann_weston_last_seen"
+    device_class: timestamp
+    state: "{{ state_attr('device_tracker.life360_joann_weston', 'last_seen') }}"
+
+  - name: "Joann Weston Current Place"
+    unique_id: "joann_weston_current_place"
+    state: "{{ state_attr('device_tracker.life360_joann_weston', 'place') }}"
+
+  - name: "Joann Weston Address"
+    unique_id: "joann_weston_address"
+    state: "{{ state_attr('device_tracker.life360_joann_weston', 'address') }}"
+
+  - name: "Joann Weston Speed"
+    unique_id: "joann_weston_speed"
+    unit_of_measurement: "mph"
+    device_class: speed
+    state_class: measurement
+    state: "{{ state_attr('device_tracker.life360_joann_weston', 'speed') }}"
+
+  - name: "Joann Weston WiFi Status"
+    unique_id: "joann_weston_wifi_status"
+    state: >
+      {% if state_attr('device_tracker.life360_joann_weston', 'wifi_on') %}
+        Connected
+      {% else %}
+        Disconnected
+      {% endif %}
+
+  - name: "Joann Weston Latitude"
+    unique_id: "joann_weston_latitude"
+    icon: mdi:map-marker-radius
+    state: "{{ state_attr('device_tracker.life360_joann_weston', 'latitude') }}"
+
+  - name: "Joann Weston Longitude"
+    unique_id: "joann_weston_longitude"
+    icon: mdi:map-marker-radius
+    state: "{{ state_attr('device_tracker.life360_joann_weston', 'longitude') }}"
+
+  - name: "Joann Weston GPS Accuracy"
+    unique_id: "joann_weston_gps_accuracy"
+    unit_of_measurement: "m"
+    state_class: measurement
+    icon: mdi:crosshairs-gps
+    state: "{{ state_attr('device_tracker.life360_joann_weston', 'gps_accuracy') }}"
+
+  - name: "Joann Weston At Location Since"
+    unique_id: "joann_weston_at_loc_since"
+    device_class: timestamp
+    state: "{{ state_attr('device_tracker.life360_joann_weston', 'at_loc_since') }}"
+
+  - name: "Joann Weston Source Type"
+    unique_id: "joann_weston_source_type"
+    state: "{{ state_attr('device_tracker.life360_joann_weston', 'source_type') }}"
+
+  #####################################################################
+  # Manuel Fragoso - device_tracker.life360_manuel_fragoso
+  #####################################################################
+  - name: "Manuel Fragoso Battery Level"
+    unique_id: "manuel_fragoso_battery_level"
+    unit_of_measurement: "%"
+    device_class: battery
+    state_class: measurement
+    state: "{{ state_attr('device_tracker.life360_manuel_fragoso', 'battery_level') }}"
+
+  - name: "Manuel Fragoso Charging Status"
+    unique_id: "manuel_fragoso_charging_status"
+    state: >
+      {% if state_attr('device_tracker.life360_manuel_fragoso', 'battery_charging') %}
+        Charging
+      {% else %}
+        Not Charging
+      {% endif %}
+
+  - name: "Manuel Fragoso Driving Status"
+    unique_id: "manuel_fragoso_driving_status"
+    state: >
+      {% if state_attr('device_tracker.life360_manuel_fragoso', 'driving') %}
+        Driving
+      {% else %}
+        Stopped
+      {% endif %}
+
+  - name: "Manuel Fragoso Last Seen"
+    unique_id: "manuel_fragoso_last_seen"
+    device_class: timestamp
+    state: "{{ state_attr('device_tracker.life360_manuel_fragoso', 'last_seen') }}"
+
+  - name: "Manuel Fragoso Current Place"
+    unique_id: "manuel_fragoso_current_place"
+    state: "{{ state_attr('device_tracker.life360_manuel_fragoso', 'place') }}"
+
+  - name: "Manuel Fragoso Address"
+    unique_id: "manuel_fragoso_address"
+    state: "{{ state_attr('device_tracker.life360_manuel_fragoso', 'address') }}"
+
+  - name: "Manuel Fragoso Speed"
+    unique_id: "manuel_fragoso_speed"
+    unit_of_measurement: "mph"
+    device_class: speed
+    state_class: measurement
+    state: "{{ state_attr('device_tracker.life360_manuel_fragoso', 'speed') }}"
+
+  - name: "Manuel Fragoso WiFi Status"
+    unique_id: "manuel_fragoso_wifi_status"
+    state: >
+      {% if state_attr('device_tracker.life360_manuel_fragoso', 'wifi_on') %}
+        Connected
+      {% else %}
+        Disconnected
+      {% endif %}
+
+  - name: "Manuel Fragoso Latitude"
+    unique_id: "manuel_fragoso_latitude"
+    icon: mdi:map-marker-radius
+    state: "{{ state_attr('device_tracker.life360_manuel_fragoso', 'latitude') }}"
+
+  - name: "Manuel Fragoso Longitude"
+    unique_id: "manuel_fragoso_longitude"
+    icon: mdi:map-marker-radius
+    state: "{{ state_attr('device_tracker.life360_manuel_fragoso', 'longitude') }}"
+
+  - name: "Manuel Fragoso GPS Accuracy"
+    unique_id: "manuel_fragoso_gps_accuracy"
+    unit_of_measurement: "m"
+    state_class: measurement
+    icon: mdi:crosshairs-gps
+    state: "{{ state_attr('device_tracker.life360_manuel_fragoso', 'gps_accuracy') }}"
+
+  - name: "Manuel Fragoso At Location Since"
+    unique_id: "manuel_fragoso_at_loc_since"
+    device_class: timestamp
+    state: "{{ state_attr('device_tracker.life360_manuel_fragoso', 'at_loc_since') }}"
+
+  - name: "Manuel Fragoso Source Type"
+    unique_id: "manuel_fragoso_source_type"
+    state: "{{ state_attr('device_tracker.life360_manuel_fragoso', 'source_type') }}"
+

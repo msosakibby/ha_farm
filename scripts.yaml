@@ -1,0 +1,24 @@
+spotifyplus_mark_turn_on:
+  alias: SpotifyPlus Mark - Turn On
+  sequence:
+  - data:
+      entity_id: media_player.spotifyplus_mark_sosa_kibby
+      device_id: '*'
+      play: true
+    enabled: true
+    alias: Transfer Spotify Playback to a device
+    action: spotifyplus.player_transfer_playback
+  mode: single
+  icon: mdi:power
+  description: ''
+spotifyplus_mark_leadership_office_turn_off:
+  alias: SpotifyPlus Mark - Leadership Office Turn Off
+  sequence:
+  - target:
+      entity_id:
+      - media_player.leadership_office
+    data: {}
+    action: media_player.turn_off
+  mode: single
+  icon: mdi:power
+  description: Turns off the Bose Sound Touch Device in the Leadership Office

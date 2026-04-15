@@ -1,0 +1,126 @@
+- id: '1749514656856'
+  alias: Home Assistant Auto-update on a schedule base
+  description: ''
+  use_blueprint:
+    path: edwardtfn/auto_update_scheduled.yaml
+    input:
+      schedule_entity: schedule.backup
+      update_out_of_schedule:
+      - update.home_assistant_core_update
+      - update.home_assistant_operating_system_update
+      - update.home_assistant_supervisor_update
+      backup_bool: false
+      restart_type: host
+      verbose_logging_bool: true
+- id: '1750218738822'
+  alias: Camera swtich
+  description: ''
+  triggers:
+  - trigger: time_pattern
+    seconds: /10
+  conditions: []
+  actions:
+  - action: camera.turn_on
+    metadata: {}
+    data: {}
+    target:
+      entity_id:
+      - camera.front_doorbell_2
+      - camera.front_doorbell
+      - camera.compressor_machine_area
+  mode: single
+- id: '1775685750415'
+  alias: Basement Stairwell Motion
+  description: ''
+  triggers:
+  - type: turned_on
+    device_id: a14c7475da1bf50f7b7e4593fa52ae03
+    entity_id: 1a3d3da65e83b412dfd966c5f579f8dc
+    domain: switch
+    trigger: device
+    for:
+      hours: 0
+      minutes: 0
+      seconds: 1
+  conditions: []
+  actions:
+  - device_id: 2aa86e0dc87295ac8a7a4819b0c13b73
+    domain: mobile_app
+    type: notify
+    message: Basement Stairs Motion
+  mode: single
+- id: '1775773641319'
+  alias: Doorbell Automation
+  description: ''
+  triggers:
+  - type: motion
+    device_id: 3be7cb2537a0d9153751716c5bc1a30a
+    entity_id: 6a3fc7e98cc578c12de3da3fa0bfc630
+    domain: binary_sensor
+    trigger: device
+    for:
+      hours: 0
+      minutes: 0
+      seconds: 1
+  - type: running
+    device_id: 3be7cb2537a0d9153751716c5bc1a30a
+    entity_id: 91226c77dd9381bd1af6a6970919db6a
+    domain: binary_sensor
+    trigger: device
+  conditions: []
+  actions:
+  - action: camera.play_stream
+    metadata: {}
+    target:
+      entity_id: camera.front_doorbell_2
+    data:
+      format: hls
+      media_player: media_player.courtesy_counter_tv_2
+  mode: single
+- id: '1776131703863'
+  alias: Basement Door Open Notification
+  description: ''
+  triggers:
+  - type: opened
+    device_id: e66e3558fe413ba12fafedc70044cddf
+    entity_id: 2a15184a1e1299080a71fb10aeb94fa8
+    domain: binary_sensor
+    trigger: device
+    for:
+      hours: 0
+      minutes: 0
+      seconds: 1
+  conditions:
+  - condition: state
+    entity_id: light.kitchen_bar_lights
+    state:
+    - 'off'
+  actions:
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 2
+      milliseconds: 0
+  - action: light.turn_on
+    metadata: {}
+    target:
+      entity_id: light.kitchen_bar_lights
+    data:
+      brightness_pct: 40
+  - action: camera.snapshot
+    metadata: {}
+    target:
+      entity_id: camera.courtesy_counter_high_resolution_channel
+    data: {}
+  mode: single
+- id: 'ha_git_sync_daily'
+  alias: 'System: Git Sync Configuration'
+  description: 'Syncs HA config to GitHub nightly'
+  trigger:
+    - platform: time
+      at: '03:00:00'
+  condition: []
+  action:
+    - service: shell_command.git_sync
+      data: {}
+  mode: single

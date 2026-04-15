@@ -1,0 +1,48 @@
+mqtt:
+  enabled: true
+  host: core-mosquitto
+  port: 1883
+  topic_prefix: frigate
+  client_id: frigate
+  user: mqtt-user
+  password: MJFood5517!@
+
+ffmpeg:
+  hwaccel_args: preset-rpi-64-h264
+
+record:
+  enabled: true
+  retain:
+    days: 7
+    mode: motion
+  events:
+    retain:
+      default: 30
+      mode: motion
+
+snapshots:
+  enabled: true
+  retain:
+    default: 30
+
+go2rtc:
+  rtsp: 
+    username: "mkibby"
+    password: "FeSK0175!@"
+  streams:
+    Front_Doors:
+      - ffmpeg:rtsp://mkibby:FeSK0175%21%40@10.11.6.224:8554/defaultPrimary1?streamType=m
+      - ffmpeg:Front_Doors#video=h264
+
+
+cameras:
+  Front_Doors:
+    ffmpeg:
+      output_args:
+        record: preset-record-generic-audio
+      inputs:
+        - path: rtsp://127.0.0.1:8554/Front_Doors?video\u0026source=ffmpeg:Front_Doors%23video%3Dh264
+          input_args: preset-rtsp-restream
+          roles:
+            - record
+            - detect

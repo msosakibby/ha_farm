@@ -1,0 +1,25 @@
+
+# Loads default set of integrations. Do not remove.
+default_config:
+
+# Example configuration.yaml entry
+media_source:
+
+
+# Example configuration.yaml entry
+camera:
+  - platform: uvc
+    nvr: IP_ADDRESS
+    key: API_KEY
+
+ffmpeg:
+
+# Load frontend themes from the themes folder
+frontend:
+  themes: !include_dir_merge_named themes
+
+automation: !include automations.yaml
+script: !include scripts.yaml
+scene: !include scenes.yaml
+
+

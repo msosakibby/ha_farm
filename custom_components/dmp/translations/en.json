@@ -1,0 +1,49 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "data": {
+          "ip": "Panel Hostname/IP Address",
+          "port": "Panel Port",
+          "listen_port": "Listener Port",
+          "account_number": "Account Number",
+          "remote_key": "Panel Key"
+        },
+        "description": "Enter your Panel information.",
+        "title": "DMP Panel Configuration"
+      },
+      "areas": {
+        "data": {
+          "away_zone": "Away Zone",
+          "home_zone": "Home Zone"
+        },
+        "description": "Select the zones to monitor for arming status.\n\nOn most panels you will use '01' when arming home (perimeter zone) and '02' or '03' for away (interior zone).\n\nWhen you arm the panel home from Home Assistant we will arm the zone you specify below, however, when you diarm or arm away this will effect all zones.",
+        "title": "DMP Arming Configuration"
+      },
+      "zones": {
+        "data": {
+          "zone_name": "Zone Name",
+          "zone_number": "Zone Number",
+          "zone_class": "Zone Device Class",
+          "add_another": "Add another zone?"
+        },
+        "description": "Add a zone to your DMP panel.",
+        "title": "DMP Zone Configuration"
+      }
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Manage Zones",
+        "data": {
+          "zones": "Existing Zones: Uncheck to remove.",
+          "zone_name": "Zone Name",
+          "zone_number": "Zone Number",
+          "zone_class": "Zone Device Class"
+        },
+        "description": "Remove existing zones or add a new zone."
+      }
+    }
+  }
+}
