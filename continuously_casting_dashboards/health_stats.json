@@ -1,0 +1,14 @@
+{
+  "all cam_192.168.7.203": {
+    "first_seen": "2026-04-15T19:09:40.386604",
+    "connection_attempts": 1,
+    "successful_connections": 0,
+    "disconnections": 0,
+    "reconnect_attempts": 132,
+    "successful_reconnects": 132,
+    "failed_reconnects": 0,
+    "uptime_seconds": 0,
+    "last_connection": "2026-04-15T22:50:45.073501",
+    "last_disconnection": null
+  }
+}

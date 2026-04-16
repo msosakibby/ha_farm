@@ -113,14 +113,60 @@
       entity_id: camera.courtesy_counter_high_resolution_channel
     data: {}
   mode: single
-- id: 'ha_git_sync_daily'
+- id: ha_git_sync_daily
   alias: 'System: Git Sync Configuration'
-  description: 'Syncs HA config to GitHub nightly'
+  description: Syncs HA config to GitHub nightly
   trigger:
-    - platform: time
-      at: '03:00:00'
+  - platform: time
+    at: 03:00:00
   condition: []
   action:
-    - service: shell_command.git_sync
-      data: {}
+  - service: shell_command.git_sync
+    data: {}
+  mode: single
+- id: '1776307061686'
+  alias: Kitchen Bar Lights off with no motion
+  description: ''
+  triggers:
+  - type: no_motion
+    device_id: 9423acbb822270c84dad8391cf7486e0
+    entity_id: 6434e2148c62cf156eb78acaad000640
+    domain: binary_sensor
+    trigger: device
+    for:
+      hours: 0
+      minutes: 20
+      seconds: 0
+  conditions: []
+  actions:
+  - action: light.turn_off
+    metadata: {}
+    target:
+      entity_id: light.kitchen_bar_lights
+    data: {}
+  mode: single
+- id: '1776316867543'
+  alias: Kitchen Bar Lights on with motion
+  description: ''
+  triggers:
+  - type: turned_on
+    device_id: 9423acbb822270c84dad8391cf7486e0
+    entity_id: 15a63a8235b4fd0a740c77dae8b70d02
+    domain: switch
+    trigger: device
+    for:
+      hours: 0
+      minutes: 0
+      seconds: 1
+  conditions:
+  - condition: state
+    entity_id: light.kitchen_bar_lights
+    state:
+    - 'off'
+  actions:
+  - action: light.turn_on
+    metadata: {}
+    target:
+      entity_id: light.kitchen_bar_lights
+    data: {}
   mode: single

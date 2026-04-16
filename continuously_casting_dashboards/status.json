@@ -1,0 +1,18 @@
+{
+  "total_devices": 1,
+  "connected_devices": 1,
+  "disconnected_devices": 0,
+  "media_playing_devices": 0,
+  "other_content_devices": 0,
+  "assistant_active_devices": 0,
+  "last_updated": "2026-04-15T22:49:06.845675",
+  "devices": {
+    "all cam": {
+      "ip": "192.168.7.203",
+      "status": "connected",
+      "last_checked": "2026-04-15T22:48:18.056885",
+      "reconnect_attempts": 0,
+      "current_dashboard": "http://192.168.7.50:8123/dashboard-cameras/0"
+    }
+  }
+}
